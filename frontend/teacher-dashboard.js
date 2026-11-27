@@ -17,7 +17,7 @@ async function loadDashboardStats() {
 
         // Get all students
         const studentsResponse =
-            await fetch("http://localhost:5000/api/students");
+            await fetch("/api/students");
 
         const studentsData =
             await studentsResponse.json();
@@ -84,7 +84,7 @@ async function loadDashboardStats() {
 
                 const response =
                     await fetch(
-                        `http://localhost:5000/api/marks/${student.id}`
+                        `/api/marks/${student.id}`
                     );
 
                 if (!response.ok) {
@@ -125,7 +125,7 @@ async function loadDashboardStats() {
 
                 const response =
                     await fetch(
-                        `http://localhost:5000/api/attendance/student/${student.id}`
+                        `/api/attendance/student/${student.id}`
                     );
 
                 if (!response.ok) {

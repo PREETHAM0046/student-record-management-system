@@ -68,7 +68,7 @@ async function loadClassOptions() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/attendance/classes"
+                "/api/attendance/classes"
             );
 
 
@@ -214,7 +214,7 @@ async function loadSections() {
         const response =
             await fetch(
 
-                `http://localhost:5000/api/attendance/sections` +
+                `/api/attendance/sections` +
 
                 `?semester=${encodeURIComponent(semester)}` +
 
@@ -471,7 +471,7 @@ async function loadSection() {
         const response =
             await fetch(
 
-                `http://localhost:5000/api/attendance/section` +
+                `/api/attendance/section` +
 
                 `?date=${encodeURIComponent(date)}` +
 
@@ -897,7 +897,7 @@ async function saveSectionAttendance() {
         const response =
             await fetch(
 
-                "http://localhost:5000/api/attendance/section",
+                "/api/attendance/section",
 
                 {
 

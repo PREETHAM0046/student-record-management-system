@@ -12,7 +12,7 @@ document.getElementById("teacherRegisterForm").addEventListener("submit", async 
     }
 
     try {
-        const response = await fetch("http://localhost:5000/api/teachers/register", {
+        const response = await fetch("/api/teachers/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

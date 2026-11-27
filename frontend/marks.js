@@ -32,7 +32,7 @@ async function loadStudents() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/students"
+                "/api/students"
             );
 
 
@@ -961,7 +961,7 @@ async function loadExistingMarks() {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/marks/${selectedStudentId}`
+                `/api/marks/${selectedStudentId}`
             );
 
 
@@ -1246,9 +1246,9 @@ async function saveMarks(
     const url =
         editingMarkId
 
-            ? `http://localhost:5000/api/marks/${editingMarkId}`
+            ? `/api/marks/${editingMarkId}`
 
-            : "http://localhost:5000/api/marks";
+            : "/api/marks";
 
 
     const method =
@@ -1424,7 +1424,7 @@ async function editMark(
 
         const response =
             await fetch(
-                `http://localhost:5000/api/marks/${selectedStudentId}`
+                `/api/marks/${selectedStudentId}`
             );
 
 
@@ -1544,7 +1544,7 @@ async function deleteMark(
 
         const response =
             await fetch(
-                `http://localhost:5000/api/marks/${markId}`,
+                `/api/marks/${markId}`,
                 {
                     method:
                         "DELETE"

@@ -68,7 +68,7 @@ async function createAnnouncement(event) {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/announcements",
+            "/api/announcements",
             {
                 method: "POST",
 
@@ -144,7 +144,7 @@ async function loadAnnouncements() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/announcements"
+            "/api/announcements"
         );
 
 
@@ -318,7 +318,7 @@ async function deleteAnnouncement(
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/announcements/${announcementId}`,
+            `/api/announcements/${announcementId}`,
             {
                 method: "DELETE"
             }

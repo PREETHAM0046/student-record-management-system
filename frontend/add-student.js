@@ -35,7 +35,7 @@ form.addEventListener("submit", async function(event) {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/students", {
+        const response = await fetch("/api/students", {
 
             method: "POST",
 

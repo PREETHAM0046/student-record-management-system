@@ -88,7 +88,7 @@ function displayStudentProfile() {
 async function loadMarks() {
 
     const response = await fetch(
-        `http://localhost:5000/api/marks/${student.id}`
+        `/api/marks/${student.id}`
     );
 
     if (!response.ok) {
@@ -232,7 +232,7 @@ function displayMarks() {
 async function loadAttendance() {
 
     const response = await fetch(
-        `http://localhost:5000/api/attendance/student/${student.id}`
+        `/api/attendance/student/${student.id}`
     );
 
     if (!response.ok) {

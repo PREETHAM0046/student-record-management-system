@@ -76,7 +76,7 @@ async function loadStudentAnnouncements() {
 
         const response =
             await fetch(
-                "http://localhost:5000/api/announcements"
+                "/api/announcements"
             );
 
 
@@ -266,7 +266,7 @@ async function loadStudentMarks() {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/marks/${student.id}`
+                `/api/marks/${student.id}`
             );
 
         const data =
@@ -553,7 +553,7 @@ async function loadStudentAttendance() {
 
         const response =
             await fetch(
-                `http://localhost:5000/api/attendance/student/${student.id}`
+                `/api/attendance/student/${student.id}`
             );
 
         const data =

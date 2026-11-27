@@ -63,7 +63,7 @@ studentLoginForm.addEventListener(
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/students/login",
+                    "/api/students/login",
                     {
 
                         method: "POST",

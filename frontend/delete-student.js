@@ -37,7 +37,7 @@ async function loadStudents() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/students"
+            "/api/students"
         );
 
         const data = await response.json();
@@ -222,7 +222,7 @@ async function deleteStudent(studentId) {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/students/${studentId}`,
+            `/api/students/${studentId}`,
 
             {
                 method: "DELETE"
