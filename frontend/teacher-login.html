@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Login - Student Record System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-container">
+
+        <div class="logo-placeholder">
+            SRS
+        </div>
+
+        <h1>TEACHER LOGIN</h1>
+
+        <p class="tagline">
+            Student Record System
+        </p>
+
+        <div class="login-card">
+
+            <h2>Welcome Teacher</h2>
+
+            <p>
+                Login using your teacher account
+            </p>
+
+            <form id="teacherLoginForm">
+
+                <input
+                    type="text"
+                    id="teacherUserId"
+                    placeholder="Enter User ID"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="teacherPassword"
+                    placeholder="Enter Password"
+                    required
+                >
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+          <button class="back-button" onclick="window.location.href='teacher-register.html'">
+    Create Teacher Account
+</button>
+
+<button class="back-button" onclick="window.location.href='index.html'">
+    ← Back
+</button>
+
+        </div>
+
+        <p class="creator">
+            Created by <strong>Preetham.G</strong>
+        </p>
+
+    </div>
+
+    <script src="teacher-login.js"></script>
+
+</body>
+</html>

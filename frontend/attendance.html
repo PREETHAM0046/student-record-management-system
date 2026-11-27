@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Attendance | Student Record System</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="app-container attendance-page">
+
+        <!-- ========================= -->
+        <!-- HEADER -->
+        <!-- ========================= -->
+
+        <header class="app-header attendance-header">
+
+            <div class="brand-area">
+
+                <div class="brand-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h1>
+                        Student Record System
+                    </h1>
+
+                    <p>
+                        Teacher • Attendance Management
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="logout-button"
+                onclick="goBack()"
+            >
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+        <!-- ========================= -->
+        <!-- HERO -->
+        <!-- ========================= -->
+
+        <section class="attendance-hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    📅 ATTENDANCE
+                </div>
+
+                <h2>
+                    Section-wise Attendance
+                </h2>
+
+                <p>
+                    Select your class and mark attendance
+                    for the entire section in one place.
+                </p>
+
+            </div>
+
+            <div class="hero-illustration">
+
+                <div class="hero-circle">
+                    👨‍🏫
+                </div>
+
+                <span class="floating-icon icon-one">
+                    ✅
+                </span>
+
+                <span class="floating-icon icon-two">
+                    📚
+                </span>
+
+                <span class="floating-icon icon-three">
+                    📊
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- SELECT CLASS -->
+        <!-- ========================= -->
+
+        <section class="attendance-card">
+
+            <div class="section-heading">
+
+                <div class="heading-icon">
+                    🎯
+                </div>
+
+                <div>
+
+                    <h2>
+                        Select Class
+                    </h2>
+
+                    <p>
+                        Choose semester, branch, section and date
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="attendance-form-grid">
+
+
+                <!-- SEMESTER -->
+
+                <div class="attendance-input-group">
+
+                    <label for="semester">
+                        🎓 Semester
+                    </label>
+
+                    <select
+                        id="semester"
+                        required
+                    >
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BRANCH -->
+
+                <div class="attendance-input-group">
+
+                    <label for="branch">
+                        💻 Branch
+                    </label>
+
+                    <select
+                        id="branch"
+                        required
+                    >
+
+                        <option value="">
+                            Select Branch
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SECTION -->
+
+                <div class="attendance-input-group">
+
+                    <label for="section">
+                        👥 Section
+                    </label>
+
+                    <select
+                        id="section"
+                        required
+                    >
+
+                        <option value="">
+                            Select Section
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATE -->
+
+                <div class="attendance-input-group">
+
+                    <label for="attendanceDate">
+                        📅 Attendance Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="load-class-area">
+
+                <button
+                    type="button"
+                    class="load-class-button"
+                    onclick="loadSection()"
+                >
+
+                    <span>
+                        🔍
+                    </span>
+
+                    Load Students
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- CLASS INFORMATION -->
+        <!-- ========================= -->
+
+        <section
+            id="classInfo"
+            class="class-summary-card hidden"
+        >
+
+            <div class="class-summary-main">
+
+                <div class="class-summary-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <span class="summary-label">
+                        SELECTED CLASS
+                    </span>
+
+                    <h2 id="classTitle">
+                        AIML - Section A
+                    </h2>
+
+                    <p id="classSubtitle">
+                        Semester 5 • Attendance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="student-total">
+
+                <strong id="studentCount">
+                    0
+                </strong>
+
+                <span>
+                    Students
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- QUICK ACTIONS -->
+        <!-- ========================= -->
+
+        <section
+            id="quickActions"
+            class="attendance-quick-actions hidden"
+        >
+
+            <div>
+
+                <h3>
+                    ⚡ Quick Actions
+                </h3>
+
+                <p>
+                    Quickly mark the entire class.
+                </p>
+
+            </div>
+
+
+            <div class="quick-buttons">
+
+                <button
+                    type="button"
+                    class="quick-present"
+                    onclick="markAllPresent()"
+                >
+                    ✅ Mark All Present
+                </button>
+
+                <button
+                    type="button"
+                    class="quick-absent"
+                    onclick="markAllAbsent()"
+                >
+                    ❌ Mark All Absent
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- STUDENT LIST -->
+        <!-- ========================= -->
+
+        <section class="attendance-student-section">
+
+            <div class="student-list-header">
+
+                <div>
+
+                    <h2>
+                        👨‍🎓 Student Attendance
+                    </h2>
+
+                    <p>
+                        Mark each student's attendance
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="sectionStudents"
+                class="section-students"
+            >
+
+                <div class="attendance-empty">
+
+                    <div class="empty-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        Select a class first
+                    </h3>
+
+                    <p>
+                        Choose semester, branch, section
+                        and date above to load students.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- SAVE AREA -->
+        <!-- ========================= -->
+
+        <section
+            id="saveAttendanceArea"
+            class="attendance-save-card hidden"
+        >
+
+            <div class="save-info">
+
+                <div class="save-icon">
+                    💾
+                </div>
+
+                <div>
+
+                    <strong>
+                        Attendance Ready
+                    </strong>
+
+                    <p>
+                        Review the attendance before saving.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="save-attendance-button"
+                onclick="saveSectionAttendance()"
+            >
+
+                💾 Save Attendance
+
+            </button>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- FOOTER -->
+        <!-- ========================= -->
+
+        <footer class="app-footer">
+
+            <p>
+                Student Record System
+            </p>
+
+            <span>
+                Created by
+                <strong>Preetham.G</strong>
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="attendance.js"></script>
+
+</body>
+
+</html>

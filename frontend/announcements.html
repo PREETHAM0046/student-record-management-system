@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Announcements | Student Record System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="announcement-page">
+
+    <!-- HEADER -->
+
+    <header class="announcement-header">
+
+        <div class="announcement-brand">
+
+            <div class="announcement-brand-icon">
+                📢
+            </div>
+
+            <div>
+                <h1>Student Record System</h1>
+                <p>Announcements</p>
+            </div>
+
+        </div>
+
+        <button
+            class="announcement-back-button"
+            onclick="goToTeacherDashboard()">
+
+            ← Dashboard
+
+        </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="announcement-container">
+
+        <!-- TITLE -->
+
+        <section class="announcement-title-card">
+
+            <div>
+
+                <span class="announcement-label">
+                    TEACHER PORTAL
+                </span>
+
+                <h2>
+                    📢 Manage Announcements
+                </h2>
+
+                <p>
+                    Create important announcements for students.
+                </p>
+
+            </div>
+
+            <div class="announcement-created">
+
+                <span>Created by</span>
+
+                <strong>
+                    Preetham G
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- CREATE ANNOUNCEMENT -->
+
+        <section class="announcement-card">
+
+            <div class="announcement-section-heading">
+
+                <div class="announcement-heading-icon">
+                    ✏️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Create Announcement
+                    </h3>
+
+                    <p>
+                        Send an announcement to students.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="announcementForm"
+                class="announcement-form">
+
+                <div class="announcement-field">
+
+                    <label for="announcementTitle">
+                        Announcement Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="announcementTitle"
+                        placeholder="Enter announcement title"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+
+                <div class="announcement-field">
+
+                    <label for="announcementMessage">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="announcementMessage"
+                        placeholder="Write your announcement here..."
+                        maxlength="1000"
+                        rows="6"
+                        required></textarea>
+
+                </div>
+
+
+                <div
+                    id="announcementMessageBox"
+                    class="announcement-message-box">
+                </div>
+
+
+                <div class="announcement-form-actions">
+
+                    <button
+                        type="button"
+                        class="announcement-clear-button"
+                        onclick="clearAnnouncementForm()">
+
+                        Clear
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="announcement-publish-button">
+
+                        📢 Publish Announcement
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- EXISTING ANNOUNCEMENTS -->
+
+        <section class="announcement-card">
+
+            <div class="announcement-section-heading">
+
+                <div class="announcement-heading-icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <h3>
+                        Existing Announcements
+                    </h3>
+
+                    <p>
+                        View and manage published announcements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="announcementsList"
+                class="announcements-list">
+
+                <div class="announcement-loading">
+                    Loading announcements...
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="announcement-footer">
+
+        <p>
+            📢 Student Record System
+        </p>
+
+        <strong>
+            Created by Preetham G
+        </strong>
+
+    </footer>
+
+
+    <script src="announcements.js"></script>
+
+</body>
+
+</html>

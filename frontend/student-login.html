@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Student Login | Student Record System</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="student-login-page">
+
+        <!-- BACKGROUND DECORATION -->
+
+        <div class="login-decoration decoration-one"></div>
+        <div class="login-decoration decoration-two"></div>
+
+
+        <!-- LOGIN CARD -->
+
+        <div class="student-login-card">
+
+            <!-- BRAND -->
+
+            <div class="student-login-brand">
+
+                <div class="student-login-icon">
+                    🎓
+                </div>
+
+                <h1>
+                    Student Record System
+                </h1>
+
+                <p>
+                    Student Portal
+                </p>
+
+            </div>
+
+
+            <!-- WELCOME -->
+
+            <div class="student-login-welcome">
+
+                <h2>
+                    Welcome Back 👋
+                </h2>
+
+                <p>
+                    Login using your USN and registered name
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form
+                id="studentLoginForm"
+                class="student-login-form"
+            >
+
+                <!-- USN -->
+
+                <div class="student-login-input-group">
+
+                    <label for="studentUSN">
+                        🆔 USN
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentUSN"
+                        placeholder="Enter your USN"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <div class="student-login-input-group">
+
+                    <label for="studentName">
+                        👤 Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your registered name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="student-login-button"
+                >
+
+                    <span>
+                        🔐
+                    </span>
+
+                    Login to Student Portal
+
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="studentLoginMessage"
+                class="student-login-message"
+            ></div>
+
+
+            <!-- TEACHER LINK -->
+
+            <div class="student-login-footer">
+
+                <p>
+                    Are you a teacher?
+                </p>
+
+                <button
+                    type="button"
+                    onclick="goToTeacherLogin()"
+                >
+                    Teacher Login →
+                </button>
+
+            </div>
+
+
+            <!-- CREATED BY -->
+
+            <div class="created-by">
+
+                <span>
+                    Created by
+                </span>
+
+                <strong>
+                    Preetham.G
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="student-login.js"></script>
+
+</body>
+
+</html>

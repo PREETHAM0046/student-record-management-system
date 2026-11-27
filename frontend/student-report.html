@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report | Student Record System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="report-page">
+
+    <header class="report-header">
+        <div class="report-brand">
+            <div class="report-brand-icon">🎓</div>
+            <div>
+                <h1>Student Record System</h1>
+                <p>Student Report</p>
+            </div>
+        </div>
+
+        <div class="report-header-actions">
+            <button onclick="window.print()" class="report-print-button">
+                🖨️ Print Report
+            </button>
+
+            <button onclick="goToDashboard()" class="report-back-button">
+                ← Dashboard
+            </button>
+        </div>
+    </header>
+
+
+    <main class="report-container">
+
+        <!-- Report Title -->
+        <section class="report-title-card">
+            <div>
+                <span class="report-label">ACADEMIC RECORD</span>
+                <h2>Student Performance Report</h2>
+                <p>Complete academic and attendance summary</p>
+            </div>
+
+            <div class="report-created">
+                <span>Created by</span>
+                <strong>Preetham G</strong>
+            </div>
+        </section>
+
+
+        <!-- Student Profile -->
+        <section class="report-card">
+
+            <div class="report-section-heading">
+                <div class="report-heading-icon">👤</div>
+                <div>
+                    <h3>Student Profile</h3>
+                    <p>Personal and academic information</p>
+                </div>
+            </div>
+
+            <div class="report-profile">
+
+                <div class="report-avatar" id="reportAvatar">
+                    ST
+                </div>
+
+                <div class="report-profile-info">
+
+                    <h2 id="reportStudentName">
+                        Loading...
+                    </h2>
+
+                    <div class="report-profile-grid">
+
+                        <div class="report-detail">
+                            <span>USN</span>
+                            <strong id="reportUSN">-</strong>
+                        </div>
+
+                        <div class="report-detail">
+                            <span>Branch</span>
+                            <strong id="reportBranch">-</strong>
+                        </div>
+
+                        <div class="report-detail">
+                            <span>Semester</span>
+                            <strong id="reportSemester">-</strong>
+                        </div>
+
+                        <div class="report-detail">
+                            <span>Section</span>
+                            <strong id="reportSection">-</strong>
+                        </div>
+
+                        <div class="report-detail">
+                            <span>Email</span>
+                            <strong id="reportEmail">-</strong>
+                        </div>
+
+                        <div class="report-detail">
+                            <span>Phone</span>
+                            <strong id="reportPhone">-</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Academic Summary -->
+        <section class="report-card">
+
+            <div class="report-section-heading">
+                <div class="report-heading-icon">📊</div>
+                <div>
+                    <h3>Academic Summary</h3>
+                    <p>Overall academic performance</p>
+                </div>
+            </div>
+
+            <div class="report-summary-grid">
+
+                <div class="report-summary-box">
+                    <span>📚</span>
+                    <small>Subjects</small>
+                    <strong id="reportSubjects">0</strong>
+                </div>
+
+                <div class="report-summary-box">
+                    <span>🎯</span>
+                    <small>Total Marks</small>
+                    <strong id="reportTotalMarks">0 / 0</strong>
+                </div>
+
+                <div class="report-summary-box">
+                    <span>📈</span>
+                    <small>Percentage</small>
+                    <strong id="reportPercentage">0%</strong>
+                </div>
+
+                <div class="report-summary-box">
+                    <span>🏆</span>
+                    <small>Overall Grade</small>
+                    <strong id="reportGrade">-</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Subject Marks -->
+        <section class="report-card">
+
+            <div class="report-section-heading">
+                <div class="report-heading-icon">📚</div>
+                <div>
+                    <h3>Subject-wise Marks</h3>
+                    <p>Internal, external and total marks</p>
+                </div>
+            </div>
+
+            <div class="report-table-wrapper">
+
+                <table class="report-table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Subject</th>
+                            <th>Internal</th>
+                            <th>External</th>
+                            <th>Total</th>
+                            <th>Grade</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="reportMarksBody">
+                        <tr>
+                            <td colspan="7" class="report-loading">
+                                Loading marks...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Attendance -->
+        <section class="report-card">
+
+            <div class="report-section-heading">
+                <div class="report-heading-icon">📅</div>
+                <div>
+                    <h3>Attendance Summary</h3>
+                    <p>Class attendance performance</p>
+                </div>
+            </div>
+
+            <div class="report-attendance-summary">
+
+                <div class="report-attendance-box">
+                    <span>📖</span>
+                    <small>Total Classes</small>
+                    <strong id="reportTotalClasses">0</strong>
+                </div>
+
+                <div class="report-attendance-box">
+                    <span>✅</span>
+                    <small>Present</small>
+                    <strong id="reportPresent">0</strong>
+                </div>
+
+                <div class="report-attendance-box">
+                    <span>❌</span>
+                    <small>Absent</small>
+                    <strong id="reportAbsent">0</strong>
+                </div>
+
+                <div class="report-attendance-box">
+                    <span>📊</span>
+                    <small>Attendance</small>
+                    <strong id="reportAttendancePercentage">0%</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Attendance History -->
+        <section class="report-card">
+
+            <div class="report-section-heading">
+                <div class="report-heading-icon">📋</div>
+                <div>
+                    <h3>Attendance History</h3>
+                    <p>Date-wise attendance record</p>
+                </div>
+            </div>
+
+            <div class="report-table-wrapper">
+
+                <table class="report-table attendance-report-table">
+
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="reportAttendanceBody">
+                        <tr>
+                            <td colspan="3" class="report-loading">
+                                Loading attendance...
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Report Footer -->
+        <section class="report-signature">
+
+            <div>
+                <p>Student Record System</p>
+                <strong>Academic Performance Report</strong>
+            </div>
+
+            <div class="report-sign-line">
+                <span>Generated Report</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="report-footer">
+        <p>🎓 Student Record System</p>
+        <strong>Created by Preetham G</strong>
+    </footer>
+
+
+    <script src="student-report.js"></script>
+
+</body>
+</html>

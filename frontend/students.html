@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Students | Student Record System</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="students-page">
+
+        <!-- HEADER -->
+
+        <header class="students-header">
+
+            <div class="students-brand">
+
+                <div class="students-brand-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h1>
+                        Student Record System
+                    </h1>
+
+                    <p>
+                        Student Management
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="back-dashboard-button"
+                onclick="goToDashboard()"
+            >
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+        <!-- MAIN -->
+
+        <main class="students-container">
+
+            <!-- PAGE TITLE -->
+
+            <section class="students-title-section">
+
+                <div>
+
+                    <span class="students-title-badge">
+                        👨‍🎓 STUDENT MANAGEMENT
+                    </span>
+
+                    <h2>
+                        All Students
+                    </h2>
+
+                    <p>
+                        Search, filter and manage registered students.
+                    </p>
+
+                </div>
+
+                <button
+                    class="add-student-top-button"
+                    onclick="goToAddStudent()"
+                >
+                    ➕ Add Student
+                </button>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="student-stat-grid">
+
+                <div class="student-stat-card">
+
+                    <div class="student-stat-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Students
+                        </span>
+
+                        <strong id="totalStudents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat-card">
+
+                    <div class="student-stat-icon">
+                        💻
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Branches
+                        </span>
+
+                        <strong id="totalBranches">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat-card">
+
+                    <div class="student-stat-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Semesters
+                        </span>
+
+                        <strong id="totalSemesters">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat-card">
+
+                    <div class="student-stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Sections
+                        </span>
+
+                        <strong id="totalSections">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SEARCH AND FILTERS -->
+
+            <section class="student-filter-card">
+
+                <div class="filter-heading">
+
+                    <div class="filter-heading-icon">
+                        🔎
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Search & Filter
+                        </h3>
+
+                        <p>
+                            Find students quickly
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-filter-grid">
+
+                    <div class="student-search-box">
+
+                        <label for="studentSearch">
+                            🔍 Search Student
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentSearch"
+                            placeholder="Search by name or USN..."
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="branchFilter">
+                            💻 Branch
+                        </label>
+
+                        <select id="branchFilter">
+
+                            <option value="">
+                                All Branches
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="semesterFilter">
+                            🎓 Semester
+                        </label>
+
+                        <select id="semesterFilter">
+
+                            <option value="">
+                                All Semesters
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="sectionFilter">
+                            👥 Section
+                        </label>
+
+                        <select id="sectionFilter">
+
+                            <option value="">
+                                All Sections
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="filter-actions">
+
+                    <button
+                        type="button"
+                        class="clear-filter-button"
+                        onclick="clearFilters()"
+                    >
+                        🔄 Clear Filters
+                    </button>
+
+                    <span id="resultCount">
+                        0 students found
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- STUDENT LIST -->
+
+            <section class="student-list-card">
+
+                <div class="student-list-header">
+
+                    <div>
+
+                        <h3>
+                            📋 Student Records
+                        </h3>
+
+                        <p>
+                            Registered students in the system
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="studentsContainer"
+                    class="students-table-container"
+                >
+
+                    <div class="student-loading-state">
+
+                        <div>
+                            ⏳
+                        </div>
+
+                        <h3>
+                            Loading Students...
+                        </h3>
+
+                        <p>
+                            Please wait while student records are loaded.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="app-footer students-footer">
+
+            <p>
+                Student Record System
+            </p>
+
+            <span>
+                Created by
+                <strong>
+                    Preetham.G
+                </strong>
+            </span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="students.js"></script>
+
+</body>
+
+</html>

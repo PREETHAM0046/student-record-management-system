@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Marks Management | Student Record System
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="marks-page">
+
+        <!-- HEADER -->
+
+        <header class="marks-header">
+
+            <div class="marks-brand">
+
+                <div class="marks-brand-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h1>
+                        Student Record System
+                    </h1>
+
+                    <p>
+                        Marks Management
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="marks-back-button"
+                onclick="goToDashboard()"
+            >
+                ← Dashboard
+            </button>
+
+        </header>
+
+
+
+        <main class="marks-container">
+
+
+            <!-- TITLE -->
+
+            <section class="marks-title-section">
+
+                <div>
+
+                    <span class="marks-title-badge">
+                        📊 ACADEMIC MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Student Marks
+                    </h2>
+
+                    <p>
+                        Add, update and manage subject-wise
+                        academic marks.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- CLASS SELECTION -->
+
+            <section class="marks-control-card">
+
+                <div class="marks-card-heading">
+
+                    <div class="marks-heading-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Select Class
+                        </h3>
+
+                        <p>
+                            Choose semester, branch and section
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="marks-filter-grid">
+
+
+                    <div class="marks-field">
+
+                        <label for="marksSemester">
+                            🎓 Semester
+                        </label>
+
+                        <select id="marksSemester">
+
+                            <option value="">
+                                Select Semester
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="marks-field">
+
+                        <label for="marksBranch">
+                            💻 Branch
+                        </label>
+
+                        <select id="marksBranch">
+
+                            <option value="">
+                                Select Branch
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="marks-field">
+
+                        <label for="marksSection">
+                            👥 Section
+                        </label>
+
+                        <select id="marksSection">
+
+                            <option value="">
+                                Select Section
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STUDENT SELECTION -->
+
+            <section class="marks-control-card">
+
+                <div class="marks-card-heading">
+
+                    <div class="marks-heading-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Select Student
+                        </h3>
+
+                        <p>
+                            Choose a student from the selected class
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="student-marks-select-area">
+
+
+                    <div class="student-marks-search">
+
+                        <label for="marksStudentSearch">
+                            🔍 Search Student
+                        </label>
+
+                        <input
+                            type="text"
+                            id="marksStudentSearch"
+                            placeholder="Search by name or USN..."
+                        >
+
+                    </div>
+
+
+
+                    <div class="student-marks-select">
+
+                        <label for="marksStudent">
+                            👤 Student
+                        </label>
+
+                        <select id="marksStudent">
+
+                            <option value="">
+                                Select Student
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div
+                    id="selectedStudentInfo"
+                    class="selected-student-info"
+                ></div>
+
+            </section>
+
+
+
+            <!-- MARK ENTRY -->
+
+            <section
+                id="marksEntrySection"
+                class="marks-control-card marks-entry-card"
+            >
+
+                <div class="marks-card-heading">
+
+                    <div class="marks-heading-icon">
+                        📝
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Add / Update Marks
+                        </h3>
+
+                        <p>
+                            Enter the student's subject marks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <form id="marksForm">
+
+
+                    <div class="marks-entry-grid">
+
+
+                        <div class="marks-subject-field">
+
+                            <label for="marksSubject">
+                                📚 Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                id="marksSubject"
+                                placeholder="Example: Java"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div>
+
+                            <label for="internalMarks">
+                                📝 Internal Marks
+                            </label>
+
+                            <input
+                                type="number"
+                                id="internalMarks"
+                                min="0"
+                                max="50"
+                                placeholder="0 - 50"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div>
+
+                            <label for="externalMarks">
+                                📄 External Marks
+                            </label>
+
+                            <input
+                                type="number"
+                                id="externalMarks"
+                                min="0"
+                                max="50"
+                                placeholder="0 - 50"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="marks-total-preview">
+
+                            <span>
+                                TOTAL
+                            </span>
+
+                            <strong id="marksTotalPreview">
+                                0 / 100
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="marks-form-actions">
+
+                        <button
+                            type="submit"
+                            class="save-marks-button"
+                        >
+                            💾 Save Marks
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="cancel-marks-button"
+                            onclick="clearMarksForm()"
+                        >
+                            ✖ Clear
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+
+
+                <div
+                    id="marksMessage"
+                    class="marks-message"
+                ></div>
+
+            </section>
+
+
+
+            <!-- EXISTING MARKS -->
+
+            <section class="marks-control-card">
+
+                <div class="marks-card-heading">
+
+                    <div class="marks-heading-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Existing Marks
+                        </h3>
+
+                        <p>
+                            View, edit or delete subject marks
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    id="existingMarksContainer"
+                    class="existing-marks-container"
+                >
+
+                    <div class="marks-empty-state">
+
+                        <div class="empty-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Select a Student
+                        </h3>
+
+                        <p>
+                            Select semester, branch, section
+                            and student to view marks.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- FOOTER -->
+
+        <footer class="app-footer marks-footer">
+
+            <p>
+                🎓 Student Record System
+            </p>
+
+            <span>
+                Created by
+                <strong>
+                    Preetham.G
+                </strong>
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+    <script src="marks.js"></script>
+
+</body>
+
+</html>

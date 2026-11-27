@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Teacher Account</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home-container">
+
+        <div class="logo-placeholder">
+            🎓
+        </div>
+
+        <h1>CREATE TEACHER ACCOUNT</h1>
+
+        <p class="tagline">
+            Student Record System
+        </p>
+
+        <div class="login-card">
+
+            <h2>Teacher Registration</h2>
+
+            <p>
+                Create your own teacher account
+            </p>
+
+            <form id="teacherRegisterForm">
+
+                <input
+                    type="text"
+                    id="teacherName"
+                    placeholder="Enter Teacher Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="newTeacherUserId"
+                    placeholder="Create User ID"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="newTeacherPassword"
+                    placeholder="Create Password"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="confirmTeacherPassword"
+                    placeholder="Confirm Password"
+                    required
+                >
+
+                <button type="submit">
+                    Create Account
+                </button>
+
+            </form>
+
+           <button class="back-button" onclick="window.location.href='teacher-login.html'">
+    ← Back to Teacher Login
+</button>
+        </div>
+
+        <p class="creator">
+            Created by <strong>Preetham.G</strong>
+        </p>
+
+    </div>
+
+   <script src="teacher-register.js"></script>
+
+</body>
+</html>

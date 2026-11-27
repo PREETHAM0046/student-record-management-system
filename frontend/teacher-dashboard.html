@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | Student Record System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+
+        <div class="dashboard-brand">
+
+            <div class="brand-icon">
+                🎓
+            </div>
+
+            <div>
+                <h1>Student Record System</h1>
+                <p>Teacher Dashboard</p>
+            </div>
+
+        </div>
+
+        <button
+            class="dashboard-logout"
+            onclick="teacherLogout()">
+
+            🚪 Logout
+
+        </button>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-container">
+
+
+        <!-- WELCOME -->
+        <section class="dashboard-welcome">
+
+            <div>
+
+                <span class="welcome-label">
+                    WELCOME BACK 👋
+                </span>
+
+                <h2>
+                    Hello,
+                    <span id="teacherName">
+                        Teacher
+                    </span>
+                </h2>
+
+                <p>
+                    Manage students, marks, attendance and
+                    announcements from one place.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+                👨‍🏫
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="dashboard-stats">
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon">
+                    👨‍🎓
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon">
+                    💻
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Branches
+                    </span>
+
+                    <strong id="totalBranches">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon">
+                    🎓
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Semesters
+                    </span>
+
+                    <strong id="totalSemesters">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Sections
+                    </span>
+
+                    <strong id="totalSections">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Marks Records
+                    </span>
+
+                    <strong id="totalMarks">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat-card">
+
+                <div class="stat-icon">
+                    📅
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Attendance Records
+                    </span>
+
+                    <strong id="totalAttendance">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MANAGEMENT -->
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span>
+                        MANAGEMENT CENTER
+                    </span>
+
+                    <h2>
+                        Manage Your System
+                    </h2>
+
+                </div>
+
+                <div class="section-heading-icon">
+                    ⚡
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+
+                <!-- ADD STUDENT -->
+
+                <button
+                    class="dashboard-app-card"
+                    onclick="openAddStudent()">
+
+                    <div class="app-card-icon">
+                        ➕
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Add Student
+                        </h3>
+
+                        <p>
+                            Register a new student
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- STUDENTS -->
+
+                <button
+                    class="dashboard-app-card"
+                    onclick="openStudents()">
+
+                    <div class="app-card-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Students
+                        </h3>
+
+                        <p>
+                            View and manage students
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- MARKS -->
+
+                <button
+                    class="dashboard-app-card"
+                    onclick="openMarks()">
+
+                    <div class="app-card-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Marks
+                        </h3>
+
+                        <p>
+                            Add, edit and manage marks
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- ATTENDANCE -->
+
+                <button
+                    class="dashboard-app-card"
+                    onclick="openAttendance()">
+
+                    <div class="app-card-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Attendance
+                        </h3>
+
+                        <p>
+                            Manage class attendance
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- UPDATE STUDENT -->
+
+                <button
+                    class="dashboard-app-card"
+                    onclick="openUpdateStudent()">
+
+                    <div class="app-card-icon">
+                        ✏️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Update Student
+                        </h3>
+
+                        <p>
+                            Edit student information
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- DELETE STUDENT -->
+
+                <button
+                    class="dashboard-app-card dashboard-delete-card"
+                    onclick="openDeleteStudent()">
+
+                    <div class="app-card-icon">
+                        🗑️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Delete Student
+                        </h3>
+
+                        <p>
+                            Remove a student record
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- ANNOUNCEMENTS -->
+
+                <button
+                    class="dashboard-app-card"
+                    onclick="openAnnouncements()">
+
+                    <div class="app-card-icon">
+                        📢
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Announcements
+                        </h3>
+
+                        <p>
+                            Create and manage student announcements
+                        </p>
+
+                    </div>
+
+                    <span class="card-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK INFO -->
+
+        <section class="dashboard-info-card">
+
+            <div class="info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    Student Record System
+                </h3>
+
+                <p>
+                    Keep student information, academic marks,
+                    attendance and announcements organized
+                    in one secure system.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="dashboard-footer">
+
+        <p>
+            Created by
+            <strong>
+                Preetham.G
+            </strong>
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="teacher-dashboard.js"></script>
+
+</body>
+
+</html>

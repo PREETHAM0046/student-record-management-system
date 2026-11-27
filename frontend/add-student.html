@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Student</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Top Bar -->
+        <header class="app-header">
+
+            <div>
+                <h1>🎓 Student Record System</h1>
+                <p>Add New Student</p>
+            </div>
+
+            <button class="logout-button" onclick="goBack()">
+                ← Back
+            </button>
+
+        </header>
+
+
+        <!-- Add Student Card -->
+        <section class="welcome-card">
+
+            <div>
+                <h2>➕ Add Student</h2>
+
+                <p>
+                    Enter the student's details below.
+                </p>
+            </div>
+
+            <div class="teacher-icon">
+                👨‍🎓
+            </div>
+
+        </section>
+
+
+        <!-- Student Form -->
+        <div class="login-card">
+
+            <h2>Student Details</h2>
+
+            <form id="addStudentForm">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter Student Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="studentUSN"
+                    placeholder="Enter USN"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="studentBranch"
+                    placeholder="Enter Branch"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="studentSemester"
+                    placeholder="Enter Semester"
+                    min="1"
+                    max="8"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="studentSection"
+                    placeholder="Enter Section"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    placeholder="Enter Email"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="studentPhone"
+                    placeholder="Enter Phone Number"
+                    required
+                >
+
+                <button type="submit">
+                    ➕ Add Student
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="app-footer">
+
+            <p>
+                Created by <strong>Preetham.G</strong>
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="add-student.js"></script>
+
+</body>
+
+</html>

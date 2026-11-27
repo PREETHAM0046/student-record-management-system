@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delete Student</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="app-container">
+
+
+        <header class="app-header">
+
+            <div>
+
+                <h1>🎓 Student Record System</h1>
+
+                <p>Delete Student</p>
+
+            </div>
+
+
+            <button
+                class="logout-button"
+                onclick="goBack()"
+            >
+
+                ← Back
+
+            </button>
+
+        </header>
+
+
+
+        <section class="welcome-card delete-welcome">
+
+            <div>
+
+                <h2>🗑️ Delete Student</h2>
+
+                <p>
+                    Permanently remove a student record.
+                </p>
+
+            </div>
+
+
+            <div class="teacher-icon">
+
+                ⚠️
+
+            </div>
+
+        </section>
+
+
+
+        <section class="delete-section">
+
+
+            <div class="update-search">
+
+                <div>
+
+                    <h2>🔍 Find Student</h2>
+
+                    <p>
+                        Search using student name or USN.
+                    </p>
+
+                </div>
+
+
+                <div class="student-search">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchStudent"
+                        placeholder="Search name or USN..."
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div id="studentResults">
+
+                <p class="loading-text">
+                    Loading students...
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <footer class="app-footer">
+
+            <p>
+                Created by <strong>Preetham.G</strong>
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+    <script src="delete-student.js"></script>
+
+</body>
+
+</html>

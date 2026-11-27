@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Student Record System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="student-dashboard-page">
+
+    <!-- HEADER -->
+    <header class="student-header">
+
+        <div class="student-brand">
+
+            <div class="student-brand-icon">
+                🎓
+            </div>
+
+            <div>
+                <h1>Student Record System</h1>
+                <p>Student Portal</p>
+            </div>
+
+        </div>
+
+        <button class="student-logout-button"
+                onclick="studentLogout()">
+            🚪 Logout
+        </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="student-dashboard-container">
+
+        <!-- WELCOME -->
+        <section class="student-welcome-card">
+
+            <div>
+
+                <span class="student-welcome-label">
+                    STUDENT PORTAL 👋
+                </span>
+
+                <h2>
+                    Welcome,
+                    <span id="studentName">
+                        Student
+                    </span>
+                </h2>
+
+                <p>
+                    View your profile, marks, attendance and
+                    important announcements in one place.
+                </p>
+
+            </div>
+
+            <div class="student-welcome-icon">
+                👨‍🎓
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+        <section class="student-profile-card">
+
+            <div class="student-profile-top">
+
+                <div class="student-avatar"
+                     id="studentAvatar">
+                    ST
+                </div>
+
+                <div class="student-profile-title">
+
+                    <h2 id="profileName">
+                        Student
+                    </h2>
+
+                    <p id="profileUsn">
+                        USN
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="student-profile-details">
+
+                <div class="student-detail">
+                    <span>💻 Branch</span>
+                    <strong id="profileBranch">-</strong>
+                </div>
+
+                <div class="student-detail">
+                    <span>🎓 Semester</span>
+                    <strong id="profileSemester">-</strong>
+                </div>
+
+                <div class="student-detail">
+                    <span>👥 Section</span>
+                    <strong id="profileSection">-</strong>
+                </div>
+
+                <div class="student-detail">
+                    <span>📧 Email</span>
+                    <strong id="profileEmail">-</strong>
+                </div>
+
+                <div class="student-detail">
+                    <span>📱 Phone</span>
+                    <strong id="profilePhone">-</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANNOUNCEMENTS -->
+        <section class="student-announcements-section">
+
+            <div class="student-section-heading">
+
+                <div>
+                    <span>
+                        IMPORTANT UPDATES
+                    </span>
+
+                    <h2>
+                        📢 Announcements
+                    </h2>
+                </div>
+
+                <div class="student-section-icon">
+                    📢
+                </div>
+
+            </div>
+
+
+            <div id="studentAnnouncementsContainer"
+                 class="student-announcements-container">
+
+                <div class="student-announcement-loading">
+
+                    <div>
+                        📢
+                    </div>
+
+                    <h3>
+                        Loading Announcements...
+                    </h3>
+
+                    <p>
+                        Please wait.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACADEMIC OVERVIEW -->
+        <section class="student-academic-section">
+
+            <div class="student-section-heading">
+
+                <div>
+                    <span>
+                        ACADEMIC PERFORMANCE
+                    </span>
+
+                    <h2>
+                        Academic Overview
+                    </h2>
+                </div>
+
+                <div class="student-section-icon">
+                    📊
+                </div>
+
+            </div>
+
+
+            <!-- STUDENT REPORT BUTTON -->
+            <div class="student-report-action">
+
+                <div>
+                    <strong>📄 Complete Academic Report</strong>
+
+                    <p>
+                        View your complete marks and attendance report.
+                    </p>
+                </div>
+
+                <button class="student-report-button"
+                        onclick="openStudentReport()">
+                    📄 View Full Student Report
+                </button>
+
+            </div>
+
+
+            <!-- ACADEMIC SUMMARY -->
+            <div class="academic-summary-grid">
+
+                <div class="academic-summary-card">
+
+                    <div class="academic-summary-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <span>
+                            Subjects
+                        </span>
+
+                        <strong id="academicSubjects">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="academic-summary-card">
+
+                    <div class="academic-summary-icon">
+                        💯
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Marks
+                        </span>
+
+                        <strong id="academicTotalMarks">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="academic-summary-card">
+
+                    <div class="academic-summary-icon">
+                        📈
+                    </div>
+
+                    <div>
+                        <span>
+                            Percentage
+                        </span>
+
+                        <strong id="academicPercentage">
+                            0%
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="academic-summary-card">
+
+                    <div class="academic-summary-icon">
+                        🏆
+                    </div>
+
+                    <div>
+                        <span>
+                            Grade
+                        </span>
+
+                        <strong id="academicGrade">
+                            -
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MARKS TABLE -->
+            <div class="student-marks-card">
+
+                <div class="student-card-heading">
+
+                    <div>
+                        <h3>
+                            📚 Subject-wise Performance
+                        </h3>
+
+                        <p>
+                            Your marks for each subject
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div id="studentMarksContainer">
+
+                    <div class="student-empty-state">
+
+                        <div>
+                            📚
+                        </div>
+
+                        <h3>
+                            Loading Marks...
+                        </h3>
+
+                        <p>
+                            Please wait.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATTENDANCE -->
+        <section class="student-attendance-section">
+
+            <div class="student-section-heading">
+
+                <div>
+                    <span>
+                        ATTENDANCE
+                    </span>
+
+                    <h2>
+                        Attendance Overview
+                    </h2>
+                </div>
+
+                <div class="student-section-icon">
+                    📅
+                </div>
+
+            </div>
+
+
+            <div class="attendance-summary-grid">
+
+                <div class="attendance-summary-card">
+
+                    <span>
+                        Total Classes
+                    </span>
+
+                    <strong id="attendanceTotal">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="attendance-summary-card">
+
+                    <span>
+                        Present
+                    </span>
+
+                    <strong id="attendancePresent">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="attendance-summary-card">
+
+                    <span>
+                        Absent
+                    </span>
+
+                    <strong id="attendanceAbsent">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="attendance-summary-card">
+
+                    <span>
+                        Attendance
+                    </span>
+
+                    <strong id="attendancePercentage">
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ATTENDANCE HISTORY -->
+            <div class="student-attendance-card">
+
+                <div class="student-card-heading">
+
+                    <div>
+                        <h3>
+                            📅 Attendance History
+                        </h3>
+
+                        <p>
+                            Your attendance records
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div id="studentAttendanceContainer">
+
+                    <div class="student-empty-state">
+
+                        <div>
+                            📅
+                        </div>
+
+                        <h3>
+                            Loading Attendance...
+                        </h3>
+
+                        <p>
+                            Please wait.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER INFO -->
+        <section class="student-info-card">
+
+            <div class="student-info-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h3>
+                    Student Record System
+                </h3>
+
+                <p>
+                    Your academic information, marks, attendance
+                    and important announcements are available here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="student-footer">
+
+        <p>
+            Created by
+            <strong>Preetham.G</strong>
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="student-dashboard.js"></script>
+
+</body>
+
+</html>
